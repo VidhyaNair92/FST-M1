@@ -36,5 +36,11 @@ public class LoginTestSteps {
     public void closeBrowser(){
         driver.quit();
     }
+    @When("^User enters \"(.*)\" and \"(.*)\"$")
+    public void enterCredentials(String username, String password){
+        driver.findElement(By.id("username")).sendKeys("admin");
+        driver.findElement(By.id("password")).sendKeys("password");
+        driver.findElement(By.xpath("//button[text()='Log in']")).click();
+    }
 
 }
